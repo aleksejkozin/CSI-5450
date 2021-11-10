@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from "axios";
 import { Artwork } from "../app/types";
 import auth from "./auth";
 //@todo: export API in a config
-const API_URL = "http://localhost:8080/v1/";
+export const API_URL = "http://localhost:8080/v1/";
 
 const apiClient = axios.create({
     baseURL: API_URL,
