@@ -3,7 +3,16 @@ import {Router} from './features/router/Router'
 import {QueryClient, QueryClientProvider} from 'react-query'
 import {appContext, AppContext, defaultAppState} from './app/AppContext'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      useErrorBoundary: true,
+    },
+    mutations: {
+      useErrorBoundary: true,
+    },
+  },
+})
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
